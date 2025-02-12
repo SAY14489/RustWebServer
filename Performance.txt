@@ -1,0 +1,10 @@
+wrk -t1 -c100 -d30s http://127.0.0.1:8085/overhead
+Running 30s test @ http://127.0.0.1:8085/overhead
+  1 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.25ms  602.28us   8.80ms   93.79%
+    Req/Sec    41.31k     5.20k   44.62k    75.00%
+  16434 requests in 30.09s, 1.38MB read
+  Socket errors: connect 0, read 16434, write 0, timeout 0
+Requests/sec:    546.23
+Transfer/sec:     46.94KB
