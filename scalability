@@ -1,0 +1,54 @@
+❯ wrk -t1 -c400 -d30s http://127.0.0.1:8083/ping
+Running 30s test @ http://127.0.0.1:8083/ping
+  1 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.85ms    1.84ms  13.48ms   82.07%
+    Req/Sec    14.63k     7.74k   22.36k    83.33%
+  9025 requests in 30.10s, 590.50KB read
+  Socket errors: connect 0, read 17491, write 0, timeout 0
+Requests/sec:    299.80
+Transfer/sec:     19.62KB
+
+❯ wrk -t2 -c400 -d30s http://127.0.0.1:8083/ping
+Running 30s test @ http://127.0.0.1:8083/ping
+  2 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    10.27ms   54.58ms 518.17ms   98.85%
+    Req/Sec     4.34k     4.09k   10.53k    52.63%
+  9029 requests in 30.03s, 590.76KB read
+  Socket errors: connect 0, read 17694, write 0, timeout 0
+Requests/sec:    300.67
+Transfer/sec:     19.67KB
+
+❯ wrk -t4 -c400 -d30s http://127.0.0.1:8083/ping
+Running 30s test @ http://127.0.0.1:8083/ping
+  4 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.12ms    1.72ms  18.30ms   78.72%
+    Req/Sec     2.97k     1.63k    5.35k    67.86%
+  8643 requests in 30.08s, 565.51KB read
+  Socket errors: connect 0, read 18137, write 0, timeout 0
+Requests/sec:    287.33
+Transfer/sec:     18.80KB
+
+❯ wrk -t8 -c400 -d30s http://127.0.0.1:8083/ping
+Running 30s test @ http://127.0.0.1:8083/ping
+  8 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.72ms    1.82ms  15.14ms   80.87%
+    Req/Sec     1.55k     0.99k    3.09k    61.40%
+  9078 requests in 30.08s, 593.97KB read
+  Socket errors: connect 0, read 17829, write 0, timeout 0
+Requests/sec:    301.81
+Transfer/sec:     19.75KB
+
+❯ wrk -t12 -c400 -d30s http://127.0.0.1:8083/ping
+Running 30s test @ http://127.0.0.1:8083/ping
+  12 threads and 400 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.39ms    1.57ms  15.76ms   83.95%
+    Req/Sec     1.24k   678.43     2.40k    66.20%
+  9034 requests in 30.08s, 591.09KB read
+  Socket errors: connect 0, read 17776, write 0, timeout 0
+Requests/sec:    300.32
+Transfer/sec:     19.65KB
